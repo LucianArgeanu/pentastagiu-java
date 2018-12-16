@@ -1,4 +1,4 @@
-package com.company;
+package com.week2;
 
 public class FibonacciNumbers {
     public static void main(String[] args) {

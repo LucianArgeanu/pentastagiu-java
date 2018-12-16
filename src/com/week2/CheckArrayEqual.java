@@ -1,4 +1,4 @@
-package com.company;
+package com.week2;
 
 public class CheckArrayEqual {
     public static void main(String[] args) {
