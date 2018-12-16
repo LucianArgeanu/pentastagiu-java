@@ -14,29 +14,23 @@ public class Basket {
         this.customer = customer;
     }
 
-    public void getTotalPrice() {
-
-        if (customer.getMembership().toString().equals("GOLD")) {
-            totalPrice -= (totalPrice * 0.2);
-            System.out.println(customer.getName() + " has " + customer.getMembership().toString()
-                    + " membership and he has to pay :" + totalPrice);
-
-        } else if (customer.getMembership().toString().equals("SILVER")) {
-            totalPrice -= (totalPrice * 0.1);
-            System.out.println(customer.getName() + " has " + customer.getMembership().toString()
-                    + " membership and he has to pay :" + totalPrice);
-
-        } else {
-            if ((customer.getMembership().toString().equals("NONE"))) {
-                System.out.println(customer.getName() + " has " + customer.getMembership().toString()
-                        + " membership and he has to pay :" + totalPrice);
-            }
-
-        }
-
+    public double getInitialPrice() {
+        return totalPrice;
     }
 
-
+    public void getTotalPrice() {
+        double total = totalPrice;
+        if(customer.getMembership().toString().equals("SILVER")){
+            total -= (getInitialPrice() * 0.1);
+            System.out.println("The customer " + customer.getName() + " has SILVER membership and has to pay a total of : " + total);
+        }else if(customer.getMembership().toString().equals("GOLD")){
+            total -= (getInitialPrice() * 0.2);
+            System.out.println("The customer " + customer.getName() + " has GOLD membership and has to pay a total of : " + total);
+        }else if(customer.getMembership().toString().equals("NONE")){
+            total = getInitialPrice();
+            System.out.println("The customer " + customer.getName() + " has NO membership and has to pay a total of : " + total);
+        }
+    }
 
     public Basket(Customer customer, double totalPrice) {
         this.customer = customer;

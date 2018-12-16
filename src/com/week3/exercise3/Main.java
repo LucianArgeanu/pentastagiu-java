@@ -11,15 +11,12 @@ public class Main {
         Basket basket = new Basket(customer, 0);
         basket.addProduct(candy);
         basket.addProduct(book);
+
+
         basket.getTotalPrice();
-
-
-
-
-//        basket.changeCustomerMembership(NONE);
+        customer.setMembership(SILVER);
+        basket.getTotalPrice();
         customer.setMembership(GOLD);
-        System.out.println("Customer: " + customer.getMembership());
         basket.getTotalPrice();
-
     }
 }
