@@ -8,7 +8,7 @@ public class FirstLastArrayElementsEquals {
 
         System.out.println(compare(firstArray));
         System.out.println(compare(secondArray));
-
+aaa
     }
 
     public static boolean compare(int[] array){
