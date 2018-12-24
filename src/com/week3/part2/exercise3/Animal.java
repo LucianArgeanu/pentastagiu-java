@@ -6,7 +6,17 @@ public class Animal extends Character {
     }
 
     public void getPosition(){
-        System.out.println(getName() + "is at position X: " + getPositionX() + " and posiiton Y: " + getPositionY());
+        System.out.println(getName() + " is at position X:" + getPositionX() + " and posiiton Y:" + getPositionY());
+    }
+
+    public void getArtifact(Artifact artifact){
+        if(artifact instanceof EnergyArtifact){
+            setEnergyPoints(getEnergyPoints() + 10);
+            System.out.println(getName() + " used energy artifact and now has " + getEnergyPoints() + " energy points");
+        }else{
+            setHealthPoints(getHealthPoints() + 10);
+            System.out.println(getName() + " used health artifact and now has " + getHealthPoints() + " health points");
+        }
     }
 
 }

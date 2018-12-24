@@ -46,8 +46,22 @@ public class Character {
         return positionY;
     }
 
-    public int getDistance(){
-        return getPositionX() + getPositionY();
+    public void setPositionX(int positionX) {
+        this.positionX = positionX;
     }
 
+    public void setPositionY(int positionY) {
+        this.positionY = positionY;
+    }
+
+    public void getInfo(){
+        if(getHealthPoints() >= 1){
+            System.out.println(getName() + " is alive");
+            System.out.println(getName() + " is at position X:" + getPositionX() + " and position Y:" + getPositionY());
+            System.out.println(getName() + " has " + getHealthPoints() + " health points and " + getEnergyPoints() + " energy points");
+            System.out.println();
+        }else{
+            System.out.println(getName() + " has died");
+        }
+    }
 }
